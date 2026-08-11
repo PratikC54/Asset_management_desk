@@ -1,15 +1,12 @@
 package com.niyati.template.controller;
 
 import com.niyati.template.dto.ApiDtos;
-import com.niyati.template.models.Asset;
-import com.niyati.template.models.AssetStatus;
 import com.niyati.template.models.RequestStatus;
 import com.niyati.template.service.AssetIssueService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.security.core.Authentication;
 
 @RestController
 @RequestMapping("/api/assets")
@@ -30,7 +27,9 @@ public class AssetIssueController {
     }
 
     @PostMapping("/asset-request")
-    public ResponseEntity<ApiDtos.AssetRequestResponse> assetRequest(@RequestBody ApiDtos.CreateAssetRequestPayload requestPayload) {
+    public ResponseEntity<ApiDtos.AssetRequestResponse> assetRequest(@RequestBody ApiDtos.CreateAssetRequestPayload requestPayload,
+                                                                       Authentication authentication) {
+        requestPayload.setEmail(authentication.getName());
         return ResponseEntity.ok(assetIssueService.assetRequest(requestPayload));
     }
 
@@ -39,6 +38,5 @@ public class AssetIssueController {
         assetIssueService.managerApproval(id, status);
         return ResponseEntity.ok().build();
     }
-
 
 }
