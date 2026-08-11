@@ -85,6 +85,7 @@ public class ApiDtos {
     public static class CreateIssueRequest {
         private Long assetId;
         private Long employeeId;
+        private Long assetRequestId;
         private LocalDate expectedReturnDate;
         private String remarks;
     }
@@ -125,6 +126,7 @@ public class ApiDtos {
 
     @Data
     public static class CreateReturnRequest {
+        private Long returnRequestId;
         private Long issueId;
         private AssetCondition returnedCondition;
         private String remarks;
