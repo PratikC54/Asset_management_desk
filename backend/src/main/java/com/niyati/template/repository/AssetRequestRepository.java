@@ -1,7 +1,9 @@
 package com.niyati.template.repository;
 
 import com.niyati.template.models.AssetRequest;
+import com.niyati.template.models.AssetIssue;
 import com.niyati.template.models.RequestStatus;
+import com.niyati.template.models.RequestType;
 import com.niyati.template.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -13,4 +15,6 @@ public interface AssetRequestRepository extends JpaRepository<AssetRequest, Long
     List<AssetRequest> findByStatusOrderByCreatedAtDesc(RequestStatus status);
 
     long countByStatus(RequestStatus status);
+
+    boolean existsByRelatedIssueAndTypeAndStatus(AssetIssue relatedIssue, RequestType type, RequestStatus status);
 }
