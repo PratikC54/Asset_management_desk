@@ -6,6 +6,7 @@ import com.niyati.template.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.core.Authentication;
 
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +16,6 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/dashboard")
 @RequiredArgsConstructor
-@CrossOrigin(origins = {"http://localhost:5173", "http://127.0.0.1:5173"})
 public class DashboardController {
 
     private final AssetRepository assetRepository;
@@ -23,8 +23,9 @@ public class DashboardController {
     private final AssetRequestRepository assetRequestRepository;
     private final UserRepository userRepository;
 
-    @GetMapping("/employee/{email}")
-    public ResponseEntity<Map<String, Object>> employeeDashboard(@PathVariable String email) {
+    @GetMapping("/employee")
+    public ResponseEntity<Map<String, Object>> employeeDashboard(Authentication authentication) {
+        String email = authentication.getName();
         User user = userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("User not found"));
         List<AssetIssue> issues = assetIssueRepository.findByEmployeeOrderByCreatedAtDesc(user);
         List<AssetRequest> requests = assetRequestRepository.findByRequesterOrderByCreatedAtDesc(user);
@@ -39,7 +40,9 @@ public class DashboardController {
     @GetMapping("/manager")
     public ResponseEntity<Map<String, Object>> managerDashboard() {
         Map<String, Object> payload = new HashMap<>();
-        payload.put("pendingRequests", assetRequestRepository.findByStatusOrderByCreatedAtDesc(RequestStatus.PENDING).stream().map(this::toRequestSummary).collect(Collectors.toList()));
+        payload.put("pendingRequests", assetRequestRepository.findByStatusOrderByCreatedAtDesc(RequestStatus.PENDING).stream()
+                .filter(request -> request.getType() == RequestType.NEW_REQUEST)
+                .map(this::toRequestSummary).collect(Collectors.toList()));
         payload.put("approvedCount", assetRequestRepository.countByStatus(RequestStatus.APPROVED));
         payload.put("inProgressCount", assetIssueRepository.countByStatus(IssueStatus.ISSUED));
         payload.put("pendingCount", assetRequestRepository.countByStatus(RequestStatus.PENDING));
@@ -60,6 +63,12 @@ public class DashboardController {
     @GetMapping("/asset-issuer")
     public ResponseEntity<Map<String, Object>> assetIssuerDashboard() {
         Map<String, Object> payload = new HashMap<>();
+        payload.put("approvedRequests", assetRequestRepository.findByStatusOrderByCreatedAtDesc(RequestStatus.APPROVED).stream()
+                .filter(request -> request.getType() == RequestType.NEW_REQUEST && request.getRelatedIssue() == null)
+                .map(this::toRequestSummary).collect(Collectors.toList()));
+        payload.put("pendingReturnRequests", assetRequestRepository.findByStatusOrderByCreatedAtDesc(RequestStatus.PENDING).stream()
+                .filter(request -> request.getType() == RequestType.RETURN_REQUEST)
+                .map(this::toRequestSummary).collect(Collectors.toList()));
         payload.put("issuedAssets", assetIssueRepository.findByStatusOrderByCreatedAtDesc(IssueStatus.ISSUED).stream().map(this::toIssueSummary).collect(Collectors.toList()));
         payload.put("receivedAssets", assetIssueRepository.findByStatusOrderByCreatedAtDesc(IssueStatus.RETURNED).stream().map(this::toIssueSummary).collect(Collectors.toList()));
         payload.put("issuedToday", assetIssueRepository.findByStatusOrderByCreatedAtDesc(IssueStatus.ISSUED).size());
@@ -81,10 +90,12 @@ public class DashboardController {
         Map<String, Object> summary = new HashMap<>();
         summary.put("id", request.getId());
         summary.put("employee", request.getRequester().getName());
+        summary.put("requesterId", request.getRequester().getUserId());
         summary.put("asset", request.getAssetName());
         summary.put("type", request.getType().name());
         summary.put("date", request.getCreatedAt().toLocalDate().toString());
         summary.put("status", request.getStatus().name());
+        summary.put("issueId", request.getRelatedIssue() != null ? request.getRelatedIssue().getId() : null);
         return summary;
     }
 
