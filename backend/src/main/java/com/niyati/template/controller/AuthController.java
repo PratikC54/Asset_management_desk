@@ -45,6 +45,16 @@ public class AuthController {
     public ResponseEntity<UserResponse> currentUser(Authentication authentication) {
         return ResponseEntity.ok(authService.getCurrentUser(authentication.getName()));
     }
+    @GetMapping("/role")
+    public ResponseEntity<String> getCurrentUserRole(Authentication authentication) {
+        String role = authentication.getAuthorities().stream()
+                .map(authority -> authority.getAuthority())
+                .filter(authority -> authority.startsWith("ROLE_"))
+                .map(authority -> authority.substring("ROLE_".length()))
+                .findFirst()
+                .orElseThrow(() -> new IllegalStateException("Authenticated user has no role"));
+        return ResponseEntity.ok(role);
+    }
 
     @GetMapping("/employees")
     public ResponseEntity<List<UserResponse>> getEmployees() {
