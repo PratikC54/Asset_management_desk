@@ -14,6 +14,7 @@ public class UserResponse {
     private String email;
     private USER_ROLE role;
     private DEPARTMENT department;
+    private String accessToken;
 
     public static UserResponse from(User user) {
         return UserResponse.builder()
