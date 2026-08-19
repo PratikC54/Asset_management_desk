@@ -1,0 +1,42 @@
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/3.0.1/maven-release-plugin-3.0.1.pom
+Progress (1): 806 BProgress (1): 2.1 kBProgress (1): 5.7 kBProgress (1): 8.4 kBProgress (1): 9.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/3.0.1/maven-release-plugin-3.0.1.pom (9.8 kB at 4.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/release/maven-release/3.0.1/maven-release-3.0.1.pom
+Progress (1): 820 BProgress (1): 1.9 kBProgress (1): 3.7 kBProgress (1): 8.6 kBProgress (1): 11 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/release/maven-release/3.0.1/maven-release-3.0.1.pom (11 kB at 41 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/3.0.1/maven-release-plugin-3.0.1.jar
+Progress (1): 0.9/61 kBProgress (1): 2.3/61 kBProgress (1): 3.6/61 kBProgress (1): 5.0/61 kBProgress (1): 6.4/61 kBProgress (1): 7.7/61 kBProgress (1): 9.1/61 kBProgress (1): 10/61 kB Progress (1): 12/61 kBProgress (1): 13/61 kBProgress (1): 15/61 kBProgress (1): 16/61 kBProgress (1): 17/61 kBProgress (1): 19/61 kBProgress (1): 20/61 kBProgress (1): 21/61 kBProgress (1): 23/61 kBProgress (1): 24/61 kBProgress (1): 25/61 kBProgress (1): 27/61 kBProgress (1): 28/61 kBProgress (1): 30/61 kBProgress (1): 31/61 kBProgress (1): 32/61 kBProgress (1): 34/61 kBProgress (1): 35/61 kBProgress (1): 36/61 kBProgress (1): 38/61 kBProgress (1): 39/61 kBProgress (1): 41/61 kBProgress (1): 42/61 kBProgress (1): 43/61 kBProgress (1): 45/61 kBProgress (1): 46/61 kBProgress (1): 47/61 kBProgress (1): 52/61 kBProgress (1): 56/61 kBProgress (1): 60/61 kBProgress (1): 61 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-release-plugin/3.0.1/maven-release-plugin-3.0.1.jar (61 kB at 204 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 4.8 kBProgress (1): 11 kB Progress (1): 14 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 37 kB/s)
+Progress (1): 3.2 kBProgress (1): 8.2 kBProgress (1): 8.2 kBProgress (1): 12 kB Progress (1): 17 kBProgress (1): 20 kBProgress (1): 21 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 23 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/maven-metadata.xml
+Progress (1): 838 B                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/maven-metadata.xml (838 B at 2.8 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.2/maven-help-plugin-3.5.2.pom
+Progress (1): 790 BProgress (1): 1.6 kBProgress (1): 4.2 kBProgress (1): 8.0 kBProgress (1): 9.9 kBProgress (1): 10 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.2/maven-help-plugin-3.5.2.pom (10 kB at 109 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/49/maven-plugins-49.pom
+Progress (1): 772 BProgress (1): 1.8 kBProgress (1): 4.3 kBProgress (1): 7.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/49/maven-plugins-49.pom (7.2 kB at 74 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/49/maven-parent-49.pom
+Progress (1): 780 BProgress (1): 1.7 kBProgress (1): 5.0 kBProgress (1): 7.7 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 19 kBProgress (1): 23 kBProgress (1): 27 kBProgress (1): 28 kBProgress (1): 31 kBProgress (1): 35 kBProgress (1): 37 kBProgress (1): 39 kBProgress (1): 43 kBProgress (1): 45 kBProgress (1): 48 kBProgress (1): 51 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/49/maven-parent-49.pom (51 kB at 516 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/39/apache-39.pom
+Progress (1): 759 BProgress (1): 1.6 kBProgress (1): 3.5 kBProgress (1): 5.5 kBProgress (1): 7.2 kBProgress (1): 7.7 kBProgress (1): 13 kB Progress (1): 17 kBProgress (1): 19 kBProgress (1): 22 kBProgress (1): 25 kBProgress (1): 27 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/39/apache-39.pom (27 kB at 171 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.14.4/junit-bom-5.14.4.pom
+Progress (1): 908 BProgress (1): 2.2 kBProgress (1): 5.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.14.4/junit-bom-5.14.4.pom (5.7 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.2/maven-help-plugin-3.5.2.jar
+Progress (1): 0.9/72 kBProgress (1): 2.3/72 kBProgress (1): 3.6/72 kBProgress (1): 5.0/72 kBProgress (1): 6.4/72 kBProgress (1): 7.7/72 kBProgress (1): 9.1/72 kBProgress (1): 10/72 kB Progress (1): 12/72 kBProgress (1): 16/72 kBProgress (1): 20/72 kBProgress (1): 25/72 kBProgress (1): 29/72 kBProgress (1): 33/72 kBProgress (1): 37/72 kBProgress (1): 41/72 kBProgress (1): 46/72 kBProgress (1): 50/72 kBProgress (1): 54/72 kBProgress (1): 57/72 kBProgress (1): 61/72 kBProgress (1): 65/72 kBProgress (1): 70/72 kBProgress (1): 72 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.2/maven-help-plugin-3.5.2.jar (72 kB at 214 kB/s)
+[INFO] 
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.733 s
+[INFO] Finished at: 2026-07-24T19:57:06+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-help-plugin:3.5.2:effective-pom (default-cli): Goal requires a project to execute but there is no POM in this directory (d:\NTS\stu-f3bac0-asset-issue-and-return-management-desk-b56acd\backend\src\main\java\com\niyati\template). Please verify you invoked Maven from the correct directory. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
