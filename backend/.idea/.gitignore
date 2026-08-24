@@ -7,3 +7,5 @@
 
 src/test/
 src/main/resources/
+
+.env.prod
