@@ -1,4 +1,4 @@
-# Asset Management System (In Development Enviorment)
+# Asset Management System
 
 A full-stack asset-management application for registering users, tracking assets, issuing assets to employees, and managing return and asset requests through role-based dashboards.
 
